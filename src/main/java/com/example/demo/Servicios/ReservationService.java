@@ -41,4 +41,16 @@ public class ReservationService {
             }
         }
     }  
+
+    public boolean deleteReservation(int id){
+    Boolean d= getReservation(id).map(reservation ->{
+    reservationRepository.delete(reservation);
+    return true;
+    }).orElse(false);
+    return d;
+}
+
+    public Reservation update(Reservation reservation) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }
